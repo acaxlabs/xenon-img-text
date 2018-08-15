@@ -1,0 +1,24 @@
+﻿<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="xenon-img-text">
+    <template>
+        <img id="img" src$="{{src}}" on-error="myFunction" style="max-height:60px;"/>
+        <h3 id="text" hidden><b>{{text}}</b></h3>
+    </template>
+    <script>
+		Polymer({
+            is: "xenon-img-text",
+			properties: {
+				/* This is an example property */
+                src: String,
+                text:String, 
+			},
+			/* fired when example property changes */
+            myFunction: function () {
+                this.$.text.hidden = false;
+                this.$.img.hidden = true;
+			}
+		});
+    </script>
+</dom-module>
+
